@@ -1,15 +1,15 @@
 package com.azold6.xlsxspringchallenge.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -32,5 +32,6 @@ public class Curso {
     private List<Aluno> aluno;
 
     @ManyToMany(mappedBy = "cursos")
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Universidade> universidades;
 }

@@ -18,7 +18,7 @@ public class Aluno {
 
     @Column(name = "CD_ALUNO")
     @Id
-    private String matricula;
+    private Integer matricula;
 
     @Column(name = "DATA_MATRICULA")
     private Date dataMatricula;
@@ -38,4 +38,8 @@ public class Aluno {
     @ManyToOne
     @JoinColumn(name = "RF_CURSO", referencedColumnName = "CD_CURSO")
     private Curso curso;
+
+    @ManyToOne
+    @JoinColumn(name = "RF_UNIVERSIDADE", referencedColumnName = "CD_UNIVERSIDADE")
+    private Universidade universidade;
 }
