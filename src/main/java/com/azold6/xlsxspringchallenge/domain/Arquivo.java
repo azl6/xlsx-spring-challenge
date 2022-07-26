@@ -2,6 +2,7 @@ package com.azold6.xlsxspringchallenge.domain;
 
 import com.azold6.xlsxspringchallenge.enums.StatusEnum;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Table(name = "TB_ARQUIVO")
 public class Arquivo {
 
@@ -25,6 +27,7 @@ public class Arquivo {
     @Column(name = "URL_DIRETORIO")
     private String urlDiretorio;
 
+    @Enumerated(value = EnumType.STRING)
     @Column(name = "STATUS")
     private StatusEnum status;
 
