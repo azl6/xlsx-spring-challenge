@@ -1,5 +1,6 @@
 package com.azold6.xlsxspringchallenge.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -38,10 +39,12 @@ public class Aluno {
     @Column(name = "MEDIA")
     private Double media;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "RF_CURSO", referencedColumnName = "CD_CURSO")
     private Curso curso;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "RF_UNIVERSIDADE", referencedColumnName = "CD_UNIVERSIDADE")
     private Universidade universidade;

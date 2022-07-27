@@ -1,6 +1,7 @@
 package com.azold6.xlsxspringchallenge.repository;
 
 import com.azold6.xlsxspringchallenge.domain.Aluno;
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
