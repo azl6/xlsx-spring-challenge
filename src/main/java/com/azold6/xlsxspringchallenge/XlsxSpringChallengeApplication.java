@@ -28,21 +28,19 @@ public class XlsxSpringChallengeApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		Universidade unifei = Universidade.builder()
-								.nomeUniversidade("Universidade Federal de Itajubá")
-								.siglaUniversidade("UNIFEI")
-								.build();
+							  .nomeUniversidade("Universidade Federal de Itajubá")
+							  .siglaUniversidade("UNIFEI")
+							  .build();
 
 		Universidade fepi = Universidade.builder()
-								.nomeUniversidade("Centro Universitário de Itajubá")
-								.siglaUniversidade("FEPI")
-								.build();
+							.nomeUniversidade("Centro Universitário de Itajubá")
+							.siglaUniversidade("FEPI")
+							.build();
 
 		Universidade ifsuldeminas = Universidade.builder()
-										.nomeUniversidade("Instituto Federal de Educação, Ciência e Tecnologia do Sul de Minas Gerais")
-										.siglaUniversidade("IFSULDEMINAS")
-										.build();
-
-		universidadeRepository.saveAll(List.of(unifei, fepi, ifsuldeminas));
+									.nomeUniversidade("Instituto Federal de Educação, Ciência e Tecnologia do Sul de Minas Gerais")
+									.siglaUniversidade("IFSULDEMINAS")
+									.build();
 
 		Curso sin = Curso.builder()
 					.nomeCurso("Sistemas de informação")
@@ -51,16 +49,16 @@ public class XlsxSpringChallengeApplication implements CommandLineRunner {
 					.build();
 
 		Curso eco = Curso.builder()
-				.nomeCurso("Engenharia da computação")
-				.siglaCurso("ECO")
-				.universidades(List.of(unifei, fepi, ifsuldeminas))
-				.build();
+					.nomeCurso("Engenharia da computação")
+					.siglaCurso("ECO")
+					.universidades(List.of(unifei, fepi, ifsuldeminas))
+					.build();
 
 		Curso mat = Curso.builder()
-				.nomeCurso("Matemática")
-				.siglaCurso("MAT")
-				.universidades(List.of(unifei, fepi, ifsuldeminas))
-				.build();
+					.nomeCurso("Matemática")
+					.siglaCurso("MAT")
+					.universidades(List.of(unifei, fepi, ifsuldeminas))
+					.build();
 
 		cursoRepository.saveAll(List.of(sin, eco, mat));
 
