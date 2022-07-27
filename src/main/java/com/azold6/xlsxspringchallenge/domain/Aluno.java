@@ -35,6 +35,9 @@ public class Aluno {
     @Column(name = "NOTA_3")
     private Double n3;
 
+    @Column(name = "MEDIA")
+    private Double media;
+
     @ManyToOne
     @JoinColumn(name = "RF_CURSO", referencedColumnName = "CD_CURSO")
     private Curso curso;

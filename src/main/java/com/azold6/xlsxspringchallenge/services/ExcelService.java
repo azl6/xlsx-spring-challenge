@@ -91,7 +91,7 @@ public class ExcelService {
                     }
                     iteracao++;
                 }
-                System.out.println(tempAluno);
+                tempAluno.setMedia((tempAluno.getN1() + tempAluno.getN2() + tempAluno.getN3()) / 3);
                 alunosLidos.add(tempAluno);
             }
         } catch (FileNotFoundException e) {

@@ -22,8 +22,6 @@ public class AlunoMapper extends BaseMapper{
         typeMap.addMappings(mapper -> mapper.using(super.cursoConverter()).map(Aluno::getCurso, AlunoResponseDto::setCurso));
         typeMap.addMappings(mapper -> mapper.using(super.universidadeConverter()).map(Aluno::getUniversidade, AlunoResponseDto::setUniversidade));
 
-        AlunoResponseDto response = modelMapper.map(aluno, AlunoResponseDto.class);
-        response.setMedia((aluno.getN1() + aluno.getN2() + aluno.getN3()) / 3);
-        return response;
+        return modelMapper.map(aluno, AlunoResponseDto.class);
     }
 }
