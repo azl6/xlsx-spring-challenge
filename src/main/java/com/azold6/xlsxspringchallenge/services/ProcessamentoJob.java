@@ -4,17 +4,15 @@ import com.azold6.xlsxspringchallenge.domain.Arquivo;
 import com.azold6.xlsxspringchallenge.enums.StatusEnum;
 import com.azold6.xlsxspringchallenge.repository.ArquivoRepository;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.File;
 import java.util.List;
 
-@Service
+@Component
 @Slf4j
 @AllArgsConstructor
 public class ProcessamentoJob {
