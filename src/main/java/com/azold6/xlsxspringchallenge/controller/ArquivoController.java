@@ -27,18 +27,13 @@ public class ArquivoController {
     public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile multipartFile) throws IOException {
 
         val arquivo = Arquivo.builder()
-                                        .nomeArquivo(multipartFile.getOriginalFilename())
-                                        .status(StatusEnum.AGUARDANDO_PROCESSAMENTO)
-                                        .urlDiretorio(URL_DIRETORIO)
-                                        .build();
+                                     .nomeArquivo(multipartFile.getOriginalFilename())
+                                     .status(StatusEnum.AGUARDANDO_PROCESSAMENTO)
+                                     .urlDiretorio(URL_DIRETORIO)
+                                     .build();
 
         arquivoRepository.save(arquivo);
         multipartFile.transferTo(new File(URL_DIRETORIO + multipartFile.getOriginalFilename()));
         return ResponseEntity.status(HttpStatus.OK).body("Arquivo salvo com sucesso.");
-    }
-
-    @GetMapping("/not-processed")
-    public ResponseEntity<List<Arquivo>> findAllAguardandoProcessamento(){
-        return ResponseEntity.ok(arquivoRepository.findAllAguardandoProcessamento());
     }
 }
