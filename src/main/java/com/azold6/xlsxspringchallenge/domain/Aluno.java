@@ -39,12 +39,11 @@ public class Aluno {
     @Column(name = "MEDIA")
     private Double media;
 
-    @JsonIgnore
+
     @ManyToOne
     @JoinColumn(name = "RF_CURSO", referencedColumnName = "CD_CURSO")
     private Curso curso;
 
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "RF_UNIVERSIDADE", referencedColumnName = "CD_UNIVERSIDADE")
     private Universidade universidade;
